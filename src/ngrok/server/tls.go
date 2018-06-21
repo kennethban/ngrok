@@ -38,13 +38,13 @@ func LoadTLSConfig(crtPath string, keyPath string) (tlsConfig *tls.Config, err e
 	tlsConfig = &tls.Config{
 		Certificates: []tls.Certificate{cert},
 		CipherSuites: []uint16{
-                        tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
-                        tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
-                        tls.TLS_FALLBACK_SCSV,
-                },
-                MinVersion:               tls.VersionTLS12,
-                MaxVersion:                               tls.VersionTLS12,
-                PreferServerCipherSuites: true,
+			tls.TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,
+			tls.TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,
+			tls.TLS_FALLBACK_SCSV,
+		},
+		MinVersion:               tls.VersionTLS12,
+		MaxVersion:               tls.VersionTLS12,
+		PreferServerCipherSuites: true,
 	}
 
 	return
